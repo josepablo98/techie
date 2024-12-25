@@ -1,0 +1,9 @@
+[submodule "techie-frontend"]
+	path = techie-frontend
+	url = https://github.com/josepablo98/techie-frontend.git
+[submodule "techie-backend"]
+	path = techie-backend
+	url = https://github.com/josepablo98/techie-backend.git
+[submodule "techie-ai"]
+	path = techie-ai
+	url = https://github.com/josepablo98/techie-ai.git
