@@ -1,0 +1,61 @@
+@startuml
+entity "User" as U {
+    * ID : INT [PK]
+    --
+    Name : VARCHAR(255)
+    Email : VARCHAR(255) [UNIQUE]
+    Password : VARCHAR(255)
+    LastPasswordResetRequest : DATETIME
+    PasswordResetToken : VARCHAR(255)
+    PasswordResetTokenExpires : DATETIME
+    PasswordResetTokenUsed : BOOLEAN
+    PasswordHistory : JSON
+}
+
+entity "Chat" as C {
+    * ID : INT [PK]
+    --
+    UserID : INT [FK]
+    Date : DATETIME
+    Messages : JSON
+}
+
+entity "Settings" as S {
+    * ID : INT [PK]
+    --
+    UserID : INT [FK]
+    Theme : VARCHAR(50)
+    Language : VARCHAR(50)
+    DetailLevel : VARCHAR(50)
+    AutoSaveChats : BOOLEAN
+}
+
+entity "Admin" as A {
+    * ID : INT [PK]
+    --
+    UserID : INT [FK]
+}
+
+entity "Log" as L {
+    * ID : INT [PK]
+    --
+    AdminID : INT [FK]
+    Date : DATETIME
+    Type : VARCHAR(255)
+    Description : TEXT
+}
+
+entity "SessionToken" as T {
+    * ID : INT [PK]
+    --
+    UserID : INT [FK]
+    Expiration : DATETIME
+}
+
+
+U ||--o{ C : "1:N"
+U ||--|| S : "1:1"
+U ||--o{ T : "1:N"
+U ||--|| A : "1:1"
+A ||--o{ L : "1:N"
+@enduml
