@@ -1,6 +1,6 @@
-# Catálogo de Requisitos
+# **Catálogo de Requisitos**
 
-## Requisitos Funcionales
+## **Requisitos Funcionales**
 
 1. **Registro de usuarios:**
     - El sistema debe permitir a los usuarios registrarse con un nombre, correo electrónico y contraseña.
@@ -25,6 +25,7 @@
     - El chatbot debe responder preguntas teóricas sobre Python basándose en un modelo LLM.
     - El chatbot debe permitir al usuario solicitar ejemplos prácticos en las respuestas.
     - El chatbot debe recordar el contexto del chat para respuestas coherentes durante una sesión activa.
+    - **El backend debe realizar las peticiones necesarias al servidor Flask para obtener las respuestas del modelo LLM.**
 
 6. **Gestión de chats:**
     - El sistema debe permitir guardar chats históricos de los usuarios.
@@ -46,29 +47,31 @@
         - Información legal y datos de contacto.
 
 9. **Administración:**
-    - El sistema debe permitir a los administradores revisar logs de errores o eventos relevantes.
+    - El sistema debe permitir a los administradores revisar logs de errores o eventos relevantes, incluyendo logs relacionados con la comunicación con el servidor Flask.
 
 10. **Cierre de sesión:**
     - Los usuarios deben poder cerrar sesión desde cualquier página.
 
-## Requisitos No Funcionales
+## **Requisitos No Funcionales**
 
 1. **Rendimiento:**
     - El sistema debe garantizar una respuesta rápida del chatbot, con un tiempo máximo de respuesta de 2 segundos para cada consulta.
+    - **La comunicación entre el backend y el servidor Flask debe ser eficiente, manteniendo una latencia mínima.**
 
 2. **Compatibilidad:**
     - La aplicación debe ser accesible desde dispositivos móviles y de escritorio.
 
 3. **Seguridad:**
     - El sistema debe garantizar la seguridad de los datos mediante contraseñas hash y comunicación segura (HTTPS).
+    - **La comunicación entre el backend y el servidor Flask debe realizarse mediante HTTPS o una conexión segura.**
 
 4. **Interfaz:**
     - La interfaz debe ser intuitiva, utilizando React con TypeScript y estilización con TailwindCSS.
 
 5. **Auditoría:**
-    - Las operaciones críticas, como restablecer contraseña, deben registrar logs de actividad para auditoría.
+    - Las operaciones críticas, como restablecer contraseña y las peticiones al servidor Flask, deben registrar logs de actividad para auditoría.
 
-## Requisitos Técnicos
+## **Requisitos Técnicos**
 
 1. **Frontend:**
     - Desarrollado en React.js con TypeScript y utilizando React Router DOM para el manejo de rutas.
@@ -76,27 +79,36 @@
 
 2. **Backend:**
     - Desarrollado en Node.js con Express.
-  
-3. **Base de datos:**
+    - **Debe incluir un módulo para comunicarse con el servidor Flask mediante API REST.**
+
+3. **Servidor Flask (Modelo LLM):**
+    - Debe ser un servidor Flask independiente que gestione las consultas al modelo LLM.
+    - Debe exponer un endpoint RESTful para responder a las consultas del backend.
+    - Debe ser capaz de manejar múltiples solicitudes concurrentes.
+
+4. **Base de datos:**
     - Persistencia de datos utilizando MariaDB.
 
-4. **Seguridad:**
+5. **Seguridad:**
     - Contraseñas almacenadas con hashing seguro (bcrypt).
     - Persistencia de sesión mediante JSON Web Tokens.
+    - **Las peticiones entre el backend y Flask deben incluir autenticación mediante un token o clave API.**
 
-5. **Correo:**
-    - Envío de correos electrónicos mediante Nodemailer.
+6. **Correo:**
+    - Envió de correos electrónicos mediante Nodemailer.
 
-6. **Modelo de IA:**
-    - Integración de un modelo LLM para responder preguntas sobre Python.
+7. **Modelo de IA:**
+    - **Debe estar alojado en el servidor Flask y ser accesible a través de un API REST.**
+    - El modelo debe ser capaz de generar respuestas en tiempo real basadas en el contexto enviado por el backend.
 
-7. **Eficiencia:**
+8. **Eficiencia:**
     - Implementación de mecanismos para el manejo eficiente de solicitudes concurrentes al modelo LLM.
+    - **El servidor Flask debe incluir técnicas de optimización, como caching, para mejorar el tiempo de respuesta.**
 
-8. **Componentes reutilizables:**
+9. **Componentes reutilizables:**
     - Diseño del layout como componentes reutilizables en React.
 
-## Requisitos de Usabilidad
+## **Requisitos de Usabilidad**
 
 1. **Accesibilidad:**
     - La interfaz debe ser fácil de entender para usuarios con conocimientos básicos de tecnología.
