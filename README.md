@@ -4,10 +4,6 @@
 
 1. **Registro de usuarios:**
     - El sistema debe permitir a los usuarios registrarse con un nombre, correo electrónico y contraseña.
-    - El sistema debe enviar un correo de confirmación tras el registro.
-    - Los usuarios deben confirmar su correo electrónico antes de poder iniciar sesión.
-    - Si un usuario intenta registrarse o iniciar sesión con un correo no confirmado, el sistema debe informar que está pendiente de confirmación.
-    - El sistema debe permitir solicitar el reenvío del correo de confirmación, limitado a una vez cada 10 minutos.
 
 2. **Inicio de sesión:**
     - El sistema debe permitir a los usuarios iniciar sesión con sus credenciales.

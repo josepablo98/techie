@@ -55,5 +55,5 @@ uml.edge('User', 'SessionToken', label='1:N\nAuthentication', color='#D68910', f
 uml.edge('Admin', 'User', label='N:1\nSupervises users', color='#C0392B', fontsize='10')
 
 # Guardar el modelo conceptual simplificado
-file_path = 'Modelo Conceptual'
+file_path = 'conceptual_model/Modelo Conceptual'
 uml.render(file_path)
