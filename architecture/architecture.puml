@@ -1,0 +1,56 @@
+@startuml
+title Software Architecture
+
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam backgroundColor #F5F5F5
+skinparam component {
+    BackgroundColor #E8F6F3
+    FontColor black
+    BorderColor #45B39D
+}
+skinparam database {
+    BackgroundColor #FCF3CF
+    FontColor black
+    BorderColor #F4D03F
+}
+skinparam cloud {
+    BackgroundColor #EBF5FB
+    FontColor black
+    BorderColor #5DADE2
+}
+skinparam actor {
+    BackgroundColor #FADBD8
+    FontColor black
+    BorderColor #E74C3C
+}
+
+actor "User" as U
+
+package "Frontend" as FE #D6EAF8 {
+    [React.js] 
+    [TailwindCSS]
+}
+
+package "Backend" as BE #F9E79F {
+    [Node.js]
+    [Express]
+}
+
+package "Flask Server" as Flask #FADBD8 {
+    [LLM Model Integration]
+}
+
+database "MariaDB" #FCF3CF {
+    [Data Storage]
+}
+
+cloud "LLM Model" as AI #EBF5FB
+
+U --> FE : "Interacts with UI"
+FE --> BE : "Sends API Requests"
+BE --> MariaDB : "CRUD Operations"
+BE --> Flask : "AI Queries"
+Flask --> AI : "Inference Requests"
+
+@enduml
