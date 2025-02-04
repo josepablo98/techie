@@ -7,7 +7,26 @@
 
 2. **Inicio de sesión:**
     - El sistema debe permitir a los usuarios iniciar sesión con sus credenciales.
+    3. **Verificación de correo electrónico:**
+        - El sistema debe enviar un correo electrónico de verificación al registrarse.
+        - Los usuarios deben verificar su correo electrónico para activar su cuenta.
+        - El sistema debe impedir el acceso a la cuenta si el correo no ha sido verificado.
 
+    4. **Eliminación de usuarios no verificados:**
+        - El sistema debe eliminar automáticamente a los usuarios que no hayan verificado su correo electrónico en una semana.
+        - La eliminación debe ser gestionada mediante un schedule en Node.js.
+        
+    ## **Requisitos Técnicos**
+
+    3. **Servidor Flask (Modelo LLM):**
+        - Debe ser un servidor Flask independiente que gestione las consultas a la API de Gemini.
+        - Debe exponer un endpoint RESTful para responder a las consultas del backend.
+        - Debe ser capaz de manejar múltiples solicitudes concurrentes.
+
+    7. **Modelo de IA:**
+        - **Debe estar alojado en el servidor Flask y ser accesible a través de un API REST.**
+        - El modelo debe ser capaz de generar respuestas en tiempo real basadas en el contexto enviado por el backend.
+        - **El modelo de IA será proporcionado por la API de Gemini para realizar ingeniería de prompting.**
 3. **Gestión de contraseñas:**
     - Los usuarios deben poder solicitar un restablecimiento de contraseña si la olvidan.
     - El sistema debe enviar un enlace por correo electrónico para restablecer la contraseña, válido durante 2 horas.

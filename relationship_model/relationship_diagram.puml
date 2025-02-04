@@ -10,12 +10,17 @@ entity "User" as U {
     PasswordResetTokenExpires : DATETIME
     PasswordResetTokenUsed : BOOLEAN
     PasswordHistory : JSON
+    isVerified : BOOLEAN [DEFAULT FALSE]
+    verifiedExpires : DATETIME
+    verifiedToken : VARCHAR(255)
+    lastVerifiedRequest : DATETIME
+    createdAt : TIMESTAMP [DEFAULT NOW()]
 }
 
 entity "Chat" as C {
     * ID : INT [PK]
     --
-    UserID : INT [FK]
+    UserID : INT [FK] [UNIQUE]
     Date : DATETIME
     Messages : JSON
 }
@@ -23,7 +28,7 @@ entity "Chat" as C {
 entity "Settings" as S {
     * ID : INT [PK]
     --
-    UserID : INT [FK]
+    UserID : INT [FK] [UNIQUE]
     Theme : VARCHAR(50)
     Language : VARCHAR(50)
     DetailLevel : VARCHAR(50)
@@ -33,29 +38,21 @@ entity "Settings" as S {
 entity "Admin" as A {
     * ID : INT [PK]
     --
-    UserID : INT [FK]
+    UserID : INT [FK] [UNIQUE]
 }
 
 entity "Log" as L {
     * ID : INT [PK]
     --
-    AdminID : INT [FK]
+    AdminID : INT [FK] [UNIQUE]
     Date : DATETIME
     Type : VARCHAR(255)
     Description : TEXT
 }
 
-entity "SessionToken" as T {
-    * ID : INT [PK]
-    --
-    UserID : INT [FK]
-    Expiration : DATETIME
-}
-
 
 U ||--o{ C : "1:N"
 U ||--|| S : "1:1"
-U ||--o{ T : "1:N"
 U ||--|| A : "1:1"
 A ||--o{ L : "1:N"
 @enduml

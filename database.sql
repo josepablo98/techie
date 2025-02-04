@@ -30,7 +30,7 @@ CREATE TABLE settings (
 -- Creación de la tabla chat
 CREATE TABLE chat (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT, -- Relación 1:N con user
+    userId INT UNIQUE, -- Relación 1:N con user
     date DATETIME,
     messages JSON,
     FOREIGN KEY (userId) REFERENCES user(id)
@@ -46,17 +46,9 @@ CREATE TABLE admin (
 -- Creación de la tabla log
 CREATE TABLE log (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    adminId INT, -- Relación 1:N con admin
+    adminId INT UNIQUE, -- Relación 1:N con admin
     date DATETIME,
     type VARCHAR(255),
     description TEXT,
     FOREIGN KEY (adminId) REFERENCES admin(id)
-);
-
--- Creación de la tabla sessionToken
-CREATE TABLE sessionToken (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    userId INT, -- Relación 1:N con user
-    expiration DATETIME,
-    FOREIGN KEY (userId) REFERENCES user(id)
 );
