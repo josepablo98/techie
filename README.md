@@ -3,7 +3,7 @@
 ## **Requisitos Funcionales**
 
 1. **Registro de usuarios:**
-    - El sistema debe permitir a los usuarios registrarse con un nombre, correo electrónico y contraseña.
+    - El sistema debe permitir a los usuarios registrarse con un nombre, email y contraseña.
 
 2. **Inicio de sesión:**
     - El sistema debe permitir a los usuarios iniciar sesión con sus credenciales.
