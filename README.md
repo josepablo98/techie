@@ -47,12 +47,10 @@
     - Los usuarios deben poder ver su historial de chats guardados y seleccionar uno para revisarlo.
 
 7. **Configuraciones del usuario:**
-    - La configuración debe permitir habilitar/deshabilitar sugerencias automáticas al escribir en el chat.
     - La configuración debe permitir elegir el nivel de detalle de las respuestas del chatbot (básico o avanzado).
     - La configuración debe incluir la posibilidad de activar o desactivar el almacenamiento automático de chats (chats temporales).
     - La configuración debe permitir cambiar el idioma del chatbot.
     - La configuración debe permitir al usuario elegir entre un tema claro y oscuro.
-    - La configuración debe permitir personalizar el tiempo máximo de inactividad antes de cerrar la sesión automáticamente.
 
 8. **Layout:**
     - **Header:**

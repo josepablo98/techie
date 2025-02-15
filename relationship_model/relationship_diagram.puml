@@ -20,7 +20,8 @@ entity "User" as U {
 entity "Chat" as C {
     * ID : INT [PK]
     --
-    UserID : INT [FK] [UNIQUE]
+    UserID : INT [FK]
+    Title: VARCHAR(255)
     Date : DATETIME
     Messages : JSON
 }
@@ -44,7 +45,7 @@ entity "Admin" as A {
 entity "Log" as L {
     * ID : INT [PK]
     --
-    AdminID : INT [FK] [UNIQUE]
+    AdminID : INT [FK]
     Date : DATETIME
     Type : VARCHAR(255)
     Description : TEXT
