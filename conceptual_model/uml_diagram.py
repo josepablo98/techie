@@ -37,23 +37,14 @@ uml.node('Settings', '''<<table border="0" cellborder="1" cellspacing="0">
 <tr><td align="left">AutoSaveChats</td></tr>
 </table>>''', shape='plaintext', style='rounded')
 
-uml.node('Admin', '''<<table border="0" cellborder="1" cellspacing="0">
-<tr><td port="header" bgcolor="#F5B7B1"><b>Admin</b></td></tr>
-</table>>''', shape='plaintext', style='rounded')
 
-uml.node('Log', '''<<table border="0" cellborder="1" cellspacing="0">
-<tr><td port="header" bgcolor="#D7BDE2"><b>Log</b></td></tr>
-<tr><td align="left">Date</td></tr>
-<tr><td align="left">Type</td></tr>
-<tr><td align="left">Description</td></tr>
-</table>>''', shape='plaintext', style='rounded')
+
+
 
 
 # Relaciones con cardinalidades y descripciones
 uml.edge('User', 'Chat', label='1:N\nCreates chats', color='#2874A6', fontsize='10')
 uml.edge('User', 'Settings', label='1:1\nDefines preferences', color='#229954', fontsize='10')
-uml.edge('Admin', 'Log', label='1:N\nRecords events', color='#884EA0', fontsize='10')
-uml.edge('Admin', 'User', label='N:1\nSupervises users', color='#C0392B', fontsize='10')
 
 # Guardar el modelo conceptual simplificado
 file_path = 'techie/conceptual_model/Modelo Conceptual'

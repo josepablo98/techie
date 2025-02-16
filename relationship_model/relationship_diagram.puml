@@ -36,24 +36,6 @@ entity "Settings" as S {
     AutoSaveChats : BOOLEAN
 }
 
-entity "Admin" as A {
-    * ID : INT [PK]
-    --
-    UserID : INT [FK] [UNIQUE]
-}
-
-entity "Log" as L {
-    * ID : INT [PK]
-    --
-    AdminID : INT [FK]
-    Date : DATETIME
-    Type : VARCHAR(255)
-    Description : TEXT
-}
-
-
 U ||--o{ C : "1:N"
 U ||--|| S : "1:1"
-U ||--|| A : "1:1"
-A ||--o{ L : "1:N"
 @enduml
