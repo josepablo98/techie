@@ -27,8 +27,7 @@
 
 7. **Chatbot:**
     - Los usuarios deben poder iniciar un nuevo chat con el chatbot LLM.
-    - El chatbot debe responder preguntas teóricas sobre Python basándose en un modelo LLM.
-    - El chatbot debe permitir al usuario solicitar ejemplos prácticos en las respuestas.
+    - El chatbot debe responder preguntas teóricas sobre programación basándose en un modelo LLM.
     - El chatbot debe recordar el contexto del chat para respuestas coherentes durante una sesión activa.
     - El backend debe realizar las peticiones necesarias a la API de Gemini para obtener las respuestas del modelo LLM.
 
@@ -56,7 +55,7 @@
 
 1. **Rendimiento:**
     - El sistema debe garantizar una respuesta rápida del chatbot, con un tiempo máximo de respuesta de 2 segundos para cada consulta.
-    - **La comunicación entre el backend y la API de Gemini debe ser eficiente, manteniendo una latencia mínima.**
+    - La comunicación entre el backend y la API de Gemini debe ser eficiente, manteniendo una latencia mínima.
 
 2. **Compatibilidad:**
     - La aplicación debe ser accesible desde dispositivos móviles y de escritorio.
@@ -75,7 +74,7 @@
 
 2. **Backend:**
     - Desarrollado en Node.js con Express.
-    - **Debe incluir un módulo para comunicarse con la API de Gemini.**
+    - Debe incluir un módulo para comunicarse con la API de Gemini.
 
 3. **Base de datos:**
     - Persistencia de datos utilizando MariaDB.

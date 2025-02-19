@@ -4,6 +4,3 @@
 [submodule "techie-backend"]
 	path = techie-backend
 	url = https://github.com/josepablo98/techie-backend.git
-[submodule "techie-ai"]
-	path = techie-ai
-	url = https://github.com/josepablo98/techie-ai.git
