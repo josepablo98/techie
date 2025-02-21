@@ -4,3 +4,6 @@
 [submodule "techie-backend"]
 	path = techie-backend
 	url = https://github.com/josepablo98/techie-backend.git
+[submodule "techie-flask"]
+	path = techie-flask
+	url = https://github.com/josepablo98/techie-flask.git
