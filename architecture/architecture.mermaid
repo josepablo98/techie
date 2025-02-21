@@ -16,12 +16,13 @@ graph LR;
         DBHandler["🗄️ **Database Handling**"]
     end
 
-    subgraph Database ["💾 **Database**"]
-        MariaDB["🐬 **MariaDB**"]
+    subgraph AI_Services ["🤖 **AI Services**"]
+        Flask["🐍 **Flask Server**"]
+        LLM["🧠 **LLM Model**"]
     end
 
-    subgraph AI_Services ["🤖 **AI Services**"]
-        LLM["🧠 **LLM Model**"]
+    subgraph Database ["💾 **Database**"]
+        MariaDB["🐬 **MariaDB**"]
     end
 
     %% Conexiones
@@ -32,7 +33,8 @@ graph LR;
     Node -->|Performs CRUD| DBHandler
     DBHandler -->|Stores Data| MariaDB
     Node -->|Processes AI Queries| AI
-    AI -->|Sends Inference Requests| LLM
+    AI -->|Sends Requests to Flask| Flask
+    Flask -->|Handles LLM Requests| LLM
 
     %% Estilos mejorados
     classDef frontend fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#000,font-weight:bold,font-size:14px;
