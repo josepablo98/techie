@@ -20,10 +20,10 @@ CREATE TABLE user (
 CREATE TABLE settings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     userId INT UNIQUE, -- Relación 1:1 con user
-    theme VARCHAR(50),
-    language VARCHAR(50),
-    detailLevel VARCHAR(50),
-    autoSaveChats BOOLEAN,
+    theme VARCHAR(50) DEFAULT "light",
+    language VARCHAR(50) DEFAULT "es",
+    detailLevel VARCHAR(50) DEFAULT "simplified",
+    autoSaveChats BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (userId) REFERENCES user(id)
 );
 
