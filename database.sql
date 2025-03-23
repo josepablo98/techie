@@ -23,7 +23,7 @@ CREATE TABLE settings (
     theme VARCHAR(50) DEFAULT "light",
     language VARCHAR(50) DEFAULT "es",
     detailLevel VARCHAR(50) DEFAULT "simplified",
-    autoSaveChats BOOLEAN DEFAULT FALSE,
+    autoSaveChats BOOLEAN DEFAULT TRUE,
     FOREIGN KEY (userId) REFERENCES user(id)
 );
 
