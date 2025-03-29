@@ -12,7 +12,6 @@ graph LR;
     subgraph Backend ["🖥️ **Backend**"]
         Node["🟢 **Node.js**"]
         Express["🚀 **Express.js**"]
-        AI["🤖 **AI Integration**"]
         DBHandler["🗄️ **Database Handling**"]
     end
 
@@ -28,15 +27,15 @@ graph LR;
     %% Conexiones
     U -->|Interacts with UI| React
     React -->|Uses Styling| Tailwind
-    React -->|Sends API Requests| Node
+    React -->|Sends CRUD Requests| Node
+    React -->|Sends AI Requests| Flask
+
     Node -->|Handles Requests| Express
     Node -->|Performs CRUD| DBHandler
     DBHandler -->|Stores Data| MariaDB
-    Node -->|Processes AI Queries| AI
-    AI -->|Sends Requests to Flask| Flask
     Flask -->|Handles LLM Requests| LLM
 
-    %% Estilos mejorados
+    %% Estilos
     classDef frontend fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px,color:#000,font-weight:bold,font-size:14px;
     classDef backend fill:#FFF3E0,stroke:#FB8C00,stroke-width:2px,color:#000,font-weight:bold,font-size:14px;
     classDef database fill:#F1F8E9,stroke:#43A047,stroke-width:2px,color:#000,font-weight:bold,font-size:14px;
