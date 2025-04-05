@@ -51,6 +51,11 @@
 11. **Cierre de sesión:**
     - Los usuarios deben poder cerrar sesión desde cualquier página.
 
+
+12. **Eliminación de cuenta:**
+     - Los usuarios deben poder eliminar su cuenta desde la sección "Información de cuenta".
+     - El sistema debe requerir confirmación para evitar eliminaciones accidentales.
+
 ## **Requisitos No Funcionales**
 
 1. **Rendimiento:**
@@ -81,7 +86,7 @@
 
 4. **Seguridad:**
     - Contraseñas almacenadas con hashing seguro (bcrypt).
-    - Persistencia de sesión mediante JSON Web Tokens.
+    - Persistencia de sesión mediante JSON Web Tokens y cookies seguras.
 
 5. **Correo:**
     - Envío de correos electrónicos mediante Nodemailer.
