@@ -10,11 +10,11 @@ entity "User" as U {
     PasswordResetTokenExpires : DATETIME
     PasswordResetTokenUsed : BOOLEAN
     PasswordHistory : JSON
-    isVerified : BOOLEAN [DEFAULT FALSE]
-    verifiedExpires : DATETIME
-    verifiedToken : VARCHAR(255)
-    lastVerifiedRequest : DATETIME
-    createdAt : TIMESTAMP [DEFAULT NOW()]
+    IsVerified : BOOLEAN [DEFAULT FALSE]
+    VerifiedExpires : DATETIME
+    VerifiedToken : VARCHAR(255)
+    LastVerifiedRequest : DATETIME
+    CreatedAt : TIMESTAMP [DEFAULT NOW()]
 }
 
 entity "Chat" as C {
@@ -24,6 +24,7 @@ entity "Chat" as C {
     Title: VARCHAR(255)
     Date : DATETIME
     Messages : JSON
+    LastDate: DATETIME
 }
 
 entity "Settings" as S {

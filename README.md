@@ -65,10 +65,7 @@
 2. **Compatibilidad:**
     - La aplicación debe ser accesible desde dispositivos móviles y de escritorio.
 
-3. **Seguridad:**
-    - El sistema debe garantizar la seguridad de los datos mediante contraseñas hash y comunicación segura (HTTPS).
-
-4. **Interfaz:**
+3. **Interfaz:**
     - La interfaz debe ser intuitiva, utilizando React con TypeScript y estilización con TailwindCSS.
 
 ## **Requisitos Técnicos**

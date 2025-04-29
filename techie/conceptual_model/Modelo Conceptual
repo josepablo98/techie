@@ -1,0 +1,37 @@
+digraph "Modelo Conceptual" {
+	bgcolor="#F8F9F9" dpi=300 fontname=Helvetica rankdir=TB style=rounded
+	User [label=<<table border="0" cellborder="1" cellspacing="0">
+<tr><td port="header" bgcolor="#AED6F1"><b>User</b></td></tr>
+<tr><td align="left">Name</td></tr>
+<tr><td align="left">Email</td></tr>
+<tr><td align="left">Password</td></tr>
+<tr><td align="left">LastPasswordResetRequest</td></tr>
+<tr><td align="left">PasswordResetToken</td></tr>
+<tr><td align="left">PasswordResetTokenExpires</td></tr>
+<tr><td align="left">PasswordResetTokenUsed</td></tr>
+<tr><td align="left">PasswordHistory</td></tr>
+<tr><td align="left">isVerified</td></tr>
+<tr><td align="left">verifiedExpires</td></tr>
+<tr><td align="left">verifiedToken</td></tr>
+<tr><td align="left">lastVerifiedRequest</td></tr>
+<tr><td align="left">createdAt</td></tr>
+</table>> shape=plaintext style=rounded]
+	Chat [label=<<table border="0" cellborder="1" cellspacing="0">
+<tr><td port="header" bgcolor="#A9DFBF"><b>Chat</b></td></tr>
+<tr><td align="left">Title</td></tr>
+<tr><td align="left">Date</td></tr>
+<tr><td align="left">Messages</td></tr>
+<tr><td align="left">LastDate</td></tr>
+</table>> shape=plaintext style=rounded]
+	Settings [label=<<table border="0" cellborder="1" cellspacing="0">
+<tr><td port="header" bgcolor="#F9E79F"><b>Settings</b></td></tr>
+<tr><td align="left">Theme</td></tr>
+<tr><td align="left">Language</td></tr>
+<tr><td align="left">DetailLevel</td></tr>
+<tr><td align="left">AutoSaveChats</td></tr>
+</table>> shape=plaintext style=rounded]
+	User -> Chat [label="1:N
+Creates chats" color="#2874A6" fontsize=10]
+	User -> Settings [label="1:1
+Defines preferences" color="#229954" fontsize=10]
+}

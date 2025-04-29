@@ -15,11 +15,11 @@ uml.node("User", '''<<table border="0" cellborder="1" cellspacing="0">
 <tr><td align="left">PasswordResetTokenExpires</td></tr>
 <tr><td align="left">PasswordResetTokenUsed</td></tr>
 <tr><td align="left">PasswordHistory</td></tr>
-<tr><td align="left">isVerified</td></tr>
-<tr><td align="left">verifiedExpires</td></tr>
-<tr><td align="left">verifiedToken</td></tr>
-<tr><td align="left">lastVerifiedRequest</td></tr>
-<tr><td align="left">createdAt</td></tr>
+<tr><td align="left">IsVerified</td></tr>
+<tr><td align="left">VerifiedExpires</td></tr>
+<tr><td align="left">VerifiedToken</td></tr>
+<tr><td align="left">LastVerifiedRequest</td></tr>
+<tr><td align="left">CreatedAt</td></tr>
 </table>>''', shape='plaintext', style='rounded')
 
 uml.node('Chat', '''<<table border="0" cellborder="1" cellspacing="0">
@@ -27,6 +27,7 @@ uml.node('Chat', '''<<table border="0" cellborder="1" cellspacing="0">
 <tr><td align="left">Title</td></tr>
 <tr><td align="left">Date</td></tr>
 <tr><td align="left">Messages</td></tr>
+<tr><td align="left">LastDate</td></tr>
 </table>>''', shape='plaintext', style='rounded')
 
 uml.node('Settings', '''<<table border="0" cellborder="1" cellspacing="0">
