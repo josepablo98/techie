@@ -35,6 +35,7 @@
     - El sistema debe permitir almacenar un historial de chats de los usuarios. Cada chat guardado debe incluir un título y la fecha de su última interacción.
     - El historial de chats debe estar ordenado cronológicamente.
     - El sistema debe permitir que los usuarios visualicen y seleccionen sus chats guardados para revisarlos.
+    - El sistema debe permitir buscar chats por título desde el historial utilizando un campo de búsqueda. La búsqueda debe actualizar los resultados en tiempo real conforme se escribe.
 
 9. **Configuraciones del usuario**
     - El sistema debe permitir que el usuario configure:
