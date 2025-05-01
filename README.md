@@ -2,120 +2,126 @@
 
 ## **Requisitos Funcionales**
 
-1. **Registro de usuarios:**
-    - El sistema debe permitir a los usuarios registrarse con un nombre, email y contraseña.
+1. **Registro de usuarios**
+    - El sistema debe permitir que los usuarios se registren proporcionando un nombre, correo electrónico y contraseña.
 
-2. **Inicio de sesión:**
-    - El sistema debe permitir a los usuarios iniciar sesión con sus credenciales.
+2. **Inicio de sesión**
+    - El sistema debe permitir que los usuarios inicien sesión utilizando su correo electrónico y contraseña registrados.
 
-3. **Verificación de correo electrónico:**
+3. **Verificación de correo electrónico**
     - El sistema debe enviar un correo electrónico de verificación al registrarse.
     - Los usuarios deben verificar su correo electrónico para activar su cuenta.
-    - El sistema debe impedir el acceso a la cuenta si el correo no ha sido verificado.
+    - El sistema debe impedir el acceso a la cuenta si el correo electrónico no ha sido verificado.
 
-4. **Eliminación de usuarios no verificados:**
-    - El sistema debe eliminar automáticamente a los usuarios que no hayan verificado su correo electrónico en una semana.
-    - La eliminación debe ser gestionada mediante un schedule en Node.js.
+4. **Eliminación de usuarios no verificados**
+    - El sistema debe eliminar automáticamente a los usuarios que no hayan verificado su correo electrónico en el plazo de una semana.
+    - La eliminación debe gestionarse mediante un proceso programado (schedule) en Node.js.
 
-5. **Gestión de contraseñas:**
-    - Los usuarios deben poder solicitar un restablecimiento de contraseña si la olvidan.
-    - El sistema debe enviar un enlace por correo electrónico para restablecer la contraseña, válido durante 2 horas.
-    - El usuario debe poder cambiar su contraseña, siempre que no sea igual a las cinco últimas.
+5. **Gestión de contraseñas**
+    - El sistema debe permitir que los usuarios soliciten el restablecimiento de contraseña en caso de olvido.
+    - El sistema debe enviar un enlace por correo electrónico para restablecer la contraseña, con una validez de 2 horas.
+    - El sistema debe permitir el cambio de contraseña, siempre que esta no coincida con ninguna de las cinco últimas utilizadas.
 
-6. **Sesión:**
-    - El sistema debe permitir la persistencia de la sesión mediante JSON Web Tokens durante un período de 2 horas.
+6. **Gestión de sesión**
+    - El sistema debe mantener la sesión del usuario mediante JSON Web Tokens (JWT) con una validez de 2 horas.
 
-7. **Chatbot:**
-    - Los usuarios deben poder iniciar un nuevo chat con el chatbot LLM.
-    - El chatbot debe responder preguntas teóricas sobre programación basándose en un modelo LLM.
-    - El chatbot debe recordar el contexto del chat para respuestas coherentes durante una sesión activa.
-    - El backend debe realizar las peticiones necesarias a la API de Gemini para obtener las respuestas del modelo LLM.
+7. **Chatbot**
+    - El sistema debe permitir que los usuarios inicien un nuevo chat con el chatbot LLM.
+    - El chatbot debe responder preguntas teóricas sobre programación en Python, utilizando un modelo LLM.
+    - El chatbot debe conservar el contexto del chat durante la sesión activa para proporcionar respuestas coherentes.
+    - El backend debe encargarse de realizar las peticiones necesarias a la API de Gemini para obtener las respuestas del modelo LLM.
 
-8. **Gestión de chats:**
-    - El sistema debe permitir guardar chats históricos de los usuarios.
-    - Los usuarios deben poder ver su historial de chats guardados y seleccionar uno para revisarlo.
+8. **Gestión de chats**
+    - El sistema debe permitir almacenar un historial de chats de los usuarios. Cada chat guardado debe incluir un título y la fecha de su última interacción.
+    - El historial de chats debe estar ordenado cronológicamente.
+    - El sistema debe permitir que los usuarios visualicen y seleccionen sus chats guardados para revisarlos.
 
-9. **Configuraciones del usuario:**
-    - La configuración debe permitir elegir el nivel de detalle de las respuestas del chatbot (básico o avanzado).
-    - La configuración debe incluir la posibilidad de activar o desactivar el almacenamiento automático de chats (chats temporales).
-    - La configuración debe permitir cambiar el idioma del chatbot.
-    - La configuración debe permitir al usuario elegir entre un tema claro y oscuro.
+9. **Configuraciones del usuario**
+    - El sistema debe permitir que el usuario configure:
+        - El nivel de detalle de las respuestas del chatbot (básico o avanzado).
+        - La activación o desactivación del almacenamiento automático de chats (chats temporales).
+        - El idioma del chatbot.
+        - El tema visual de la interfaz (claro u oscuro).
 
-10. **Layout:**
-    - **Header:**
-        - Botón para iniciar un nuevo chat.
-        - Menú desplegable con opciones como "Información de cuenta", "Historial de chats", "Configuración" y "Cerrar sesión".
-    - **Footer:**
-        - Información legal y datos de contacto.
+10. **Interfaz - Layout**
+    
+    10.1. **Header**
+    - Botón para iniciar un nuevo chat.
+    - Menú desplegable con opciones como: "Información de cuenta", "Historial de chats", "Configuración" y "Cerrar sesión".
+    
+    10.2. **Footer**
+    - Información sobre el chatbot.
+    - Enlaces accesibles a contacto y política de privacidad.
 
-11. **Cierre de sesión:**
-    - Los usuarios deben poder cerrar sesión desde cualquier página.
+11. **Cierre de sesión**
+    - El sistema debe permitir que los usuarios cierren sesión desde el menú del encabezado (header).
 
+12. **Eliminación de chats**
+    - El sistema debe permitir que los usuarios eliminen chats individuales o todos sus chats desde la sección "Configuración".
+    - El sistema debe requerir una confirmación previa para evitar eliminaciones accidentales.
 
-12. **Eliminación de cuenta:**
-     - Los usuarios deben poder eliminar su cuenta desde la sección "Información de cuenta".
-     - El sistema debe requerir confirmación para evitar eliminaciones accidentales.
+13. **Eliminación de cuenta**
+    - El sistema debe permitir que los usuarios eliminen su cuenta desde la sección "Configuración".
+    - El sistema debe requerir doble confirmación para evitar eliminaciones accidentales.
+
+---
 
 ## **Requisitos No Funcionales**
 
-1. **Rendimiento:**
-    - El sistema debe garantizar una respuesta rápida del chatbot, con un tiempo máximo de respuesta de 2 segundos para cada consulta.
-    - La comunicación entre el backend y la API de Gemini debe ser eficiente, manteniendo una latencia mínima.
+1. **Rendimiento**
+    - El sistema debe proporcionar una respuesta rápida del chatbot, con un tiempo máximo de 2 segundos por consulta.
+    - La comunicación entre el backend y la API de Gemini debe ser eficiente, con latencia mínima.
 
-2. **Compatibilidad:**
-    - La aplicación debe ser accesible desde dispositivos móviles y de escritorio.
+2. **Compatibilidad**
+    - La aplicación debe ser accesible desde dispositivos móviles y ordenadores de escritorio.
 
-3. **Interfaz:**
-    - La interfaz debe ser intuitiva, utilizando React con TypeScript y estilización con TailwindCSS.
+3. **Interfaz**
+    - La interfaz debe ser intuitiva y estar desarrollada utilizando React con TypeScript y estilizada con TailwindCSS.
+
+---
 
 ## **Requisitos Técnicos**
 
-1. **Frontend:**
-    - Desarrollado en React.js con TypeScript y utilizando React Router DOM para el manejo de rutas.
-    - Gestión del estado global mediante Redux Toolkit.
+1. **Frontend**
+    - El frontend debe estar desarrollado en React.js con TypeScript.
+    - El sistema de rutas debe gestionarse con React Router DOM.
+    - La gestión del estado global debe implementarse mediante Redux Toolkit.
 
-2. **Backend:**
-    - Desarrollado en Node.js con Express.
-    - Debe incluir un módulo para comunicarse con la API de Gemini.
+2. **Backend**
+    - El backend debe estar desarrollado en Node.js con Express para la lógica principal y la gestión de la base de datos.
+    - Un segundo backend en Flask (Python) debe encargarse de la interacción con la API de Gemini.
 
-3. **Base de datos:**
-    - Persistencia de datos utilizando MariaDB.
+3. **Base de datos**
+    - El sistema debe utilizar MariaDB para la persistencia de datos.
 
-4. **Seguridad:**
-    - Contraseñas almacenadas con hashing seguro (bcrypt).
-    - Persistencia de sesión mediante JSON Web Tokens y cookies seguras.
+4. **Seguridad**
+    - Las contraseñas deben almacenarse utilizando hashing seguro con bcrypt.
+    - Las sesiones deben mantenerse mediante JSON Web Tokens (JWT) y cookies seguras.
 
-5. **Correo:**
-    - Envío de correos electrónicos mediante Nodemailer.
+5. **Correo electrónico**
+    - El sistema debe gestionar el envío de correos electrónicos utilizando Nodemailer.
 
-6. **Eficiencia:**
-    - Implementación de mecanismos para el manejo eficiente de solicitudes concurrentes a la API de Gemini.
+6. **Componentes reutilizables**
+    - El diseño del layout debe componerse a partir de componentes reutilizables en React.
 
-7. **Componentes reutilizables:**
-    - Diseño del layout como componentes reutilizables en React.
+---
 
 ## **Requisitos de Usabilidad**
 
-1. **Accesibilidad:**
-    - La interfaz debe ser fácil de entender para usuarios con conocimientos básicos de tecnología.
+1. **Accesibilidad**
+    - La interfaz debe ser comprensible y fácil de usar para usuarios con conocimientos básicos de tecnología.
 
-2. **Diseño responsivo:**
-    - El diseño debe adaptarse a pantallas de distintos tamaños.
+2. **Footer**
+    - El pie de página debe incluir enlaces claros y accesibles a la política de privacidad, contacto e información del chatbot.
 
-3. **Footer:**
-    - Debe proporcionar enlaces claros y accesibles a información legal y de contacto.
+3. **Header**
+    - Las opciones del encabezado deben estar bien organizadas y ser fácilmente accesibles.
 
-4. **Header:**
-    - Las opciones del header deben estar organizadas y ser fácilmente accesibles.
+4. **Retroalimentación**
+    - El sistema debe proporcionar retroalimentación visual clara tras la realización de acciones, como por ejemplo: "Contraseña cambiada exitosamente".
 
-5. **Retroalimentación:**
-    - El sistema debe ofrecer retroalimentación visual para indicar el estado de las acciones (como "Contraseña cambiada exitosamente").
+5. **Historial de chats**
+    - El historial debe mostrar los chats ordenados cronológicamente.
 
-6. **Historial de chats:**
-    - Los chats deben estar ordenados cronológicamente en el historial.
-
-7. **Sección de ayuda:**
-    - Las preguntas más frecuentes sobre el uso del chatbot deben estar disponibles en una sección de ayuda.
-
-8. **Personalización:**
-    - La configuración debe incluir opciones accesibles para personalizar el comportamiento del chatbot, como nivel de detalle o tipo de ejemplos en las respuestas.
+6. **Personalización**
+    - Las opciones de configuración deben estar disponibles de forma accesible para permitir personalizar el comportamiento del chatbot, como el nivel de detalle o el tipo de ejemplos en las respuestas.
