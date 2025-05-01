@@ -42,6 +42,7 @@
         - La activación o desactivación del almacenamiento automático de chats (chats temporales).
         - El idioma del chatbot.
         - El tema visual de la interfaz (claro u oscuro).
+        - Un contexto global personalizado que el chatbot tendrá en cuenta durante la conversación (por ejemplo, cómo debe dirigirse al usuario o el tono que debe usar), siempre y cuando no contradiga instrucciones prioritarias como el idioma o el nivel de detalle.
 
 10. **Interfaz - Layout**
     

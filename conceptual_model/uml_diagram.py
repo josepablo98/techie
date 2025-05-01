@@ -36,6 +36,7 @@ uml.node('Settings', '''<<table border="0" cellborder="1" cellspacing="0">
 <tr><td align="left">Language</td></tr>
 <tr><td align="left">DetailLevel</td></tr>
 <tr><td align="left">AutoSaveChats</td></tr>
+<tr><td align="left">GlobalContext</td></tr>
 </table>>''', shape='plaintext', style='rounded')
 
 

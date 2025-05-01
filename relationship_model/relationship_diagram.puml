@@ -35,6 +35,7 @@ entity "Settings" as S {
     Language : VARCHAR(50) [DEFAULT "es"]
     DetailLevel : VARCHAR(50) [DEFAULT "simplified"]
     AutoSaveChats : BOOLEAN [DEFAULT TRUE]
+    GlobalContext : TEXT [DEFAULT NULL]
 }
 
 U ||--o{ C : "1:N"

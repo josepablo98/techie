@@ -24,6 +24,7 @@ CREATE TABLE settings (
     language VARCHAR(50) DEFAULT "es",
     detailLevel VARCHAR(50) DEFAULT "simplified",
     autoSaveChats BOOLEAN DEFAULT TRUE,
+    globalContext TEXT DEFAULT NULL,
     FOREIGN KEY (userId) REFERENCES user(id)
 );
 
