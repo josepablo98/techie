@@ -2,7 +2,7 @@ from graphviz import Digraph
 
 # Crear un objeto Digraph para el modelo conceptual UML simplificado
 uml = Digraph("Modelo Conceptual", format="png")
-uml.attr(rankdir="TB", style="rounded", fontname="Helvetica", bgcolor="#F8F9F9", dpi="300")
+uml.attr(rankdir="LR", style="rounded", fontname="Helvetica", bgcolor="#F8F9F9", dpi="300")
 
 # Definir entidades principales simplificadas con atributos completos
 uml.node("User", '''<<table border="0" cellborder="1" cellspacing="0">
