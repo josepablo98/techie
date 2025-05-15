@@ -22,7 +22,6 @@ entity "Chat" as C {
     --
     UserID : INT [FK]
     Title: VARCHAR(255)
-    Date : DATETIME
     Messages : JSON
     LastDate: DATETIME
 }

@@ -33,7 +33,6 @@ CREATE TABLE chat (
     id INT AUTO_INCREMENT PRIMARY KEY,
     userId INT, -- Relación 1:N con user
     title VARCHAR(255),
-    date DATETIME,
     lastDate DATETIME,
     messages JSON,
     FOREIGN KEY (userId) REFERENCES user(id)
