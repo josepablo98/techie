@@ -14,6 +14,8 @@ Techie es un chatbot interactivo orientado a estudiantes de programación, que r
 
 ## Instalación general
 
-1. Clona el repositorio:
+Clona el repositorio principal junto con sus submódulos:
+
 ```bash
-git clone https://github.com/josepablo98/techie.git
+git clone --recurse-submodules https://github.com/josepablo98/techie.git
+cd techie
