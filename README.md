@@ -88,6 +88,8 @@
     - El frontend debe estar desarrollado en React.js con TypeScript.
     - El sistema de rutas debe gestionarse con React Router DOM.
     - La gestión del estado global debe implementarse mediante Redux Toolkit.
+    - El sistema debe utilizar Lazy Loading para optimizar la carga de páginas no esenciales (por ejemplo: Configuración, Acerca de, Contacto), mejorando el rendimiento inicial de la aplicación.
+
 
 2. **Backend**
     - El backend debe estar desarrollado en Node.js con Express para la lógica principal y la gestión de la base de datos.
